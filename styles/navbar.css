@@ -1,0 +1,36 @@
+.navbar {
+  padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  color: var(--fonte-cinza);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.container__titulo {
+  font-size: 18px;
+}
+
+.opcoes {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+.entrar {
+  color: var(--fonte-cinza);
+  text-decoration: none;
+}
+
+.cadastrar {
+  padding: 0.6em 1.1em;
+  border-radius: 8px;
+  border: 1px solid var(--vinho);
+  background: var(--vinho);
+  color: var(--branco);
+  text-decoration: none;
+}

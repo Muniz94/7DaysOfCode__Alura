@@ -1,0 +1,15 @@
+@import url("styles/navbar.css");
+@import url("styles/cabecalho.css"); 
+
+:root {
+  --fonte-principal: "Inter";
+  --fonte-cinza: #667085;
+  --vinho: #8E2424;
+  --branco: #FFF;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: 16px;
+  font-weight: 500;
+}
