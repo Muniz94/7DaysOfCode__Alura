@@ -1,7 +1,6 @@
 .cabecalho {
-  padding: 6em 22em;
+  padding: 6em 0em;
   text-align: center;
-  height: 407px;
 }
 
 .cabecalho__texto {
@@ -18,4 +17,5 @@
   font-weight: 400;
   font-size: 20px;
   color: var(--fonte-cinza);
+  padding: 0 18em;
 }
