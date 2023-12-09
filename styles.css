@@ -1,12 +1,14 @@
 @import url("styles/navbar.css");
 @import url("styles/cabecalho.css"); 
 @import url("styles/metricas.css");
+@import url("styles/vagas.css");
 
 :root {
   --fonte-principal: "Inter";
   --fonte-cinza: #667085;
   --vinho: #8E2424;
   --branco: #FFF;
+  --fundo-vagas: rgba(142, 36, 36, 0.05);
 }
 
 body {
