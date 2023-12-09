@@ -1,0 +1,30 @@
+.vagas {
+  padding: 6em 0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vagas__texto {
+  color: var(--vinho);
+  font-size: 14px;
+  border-radius: 16px;
+  background: var(--fundo-vagas);
+  padding: 0.25em 0.75em;
+}
+
+.vagas__titulo {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.vagas__paragrafo {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--fonte-cinza);
+}
+
+.vagas__imagem {
+  margin: 4em 0;
+  width: 92%;
+}
