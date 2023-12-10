@@ -1,30 +1,33 @@
-.vagas {
-  padding: 6em 0em;
+.secao-vagas {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
-.vagas__texto {
-  color: var(--vinho);
-  font-size: 14px;
-  border-radius: 16px;
-  background: var(--fundo-vagas);
-  padding: 0.25em 0.75em;
-}
-
-.vagas__titulo {
-  font-size: 36px;
-  font-weight: 600;
-}
-
-.vagas__paragrafo {
+.secao-vagas__texto {
   font-size: 20px;
-  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.secao-vagas__card {
+  border-radius: 16px;
+  display: flex;
+  padding: 24px 24px 28px 24px;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid var(--gray-200, #EAECF0);
+  margin-bottom: 3em;
+}
+
+.secao-vagas__card__titulo {
+  font-size: 18px;
+}
+
+.informacoes {
   color: var(--fonte-cinza);
 }
 
-.vagas__imagem {
-  margin: 4em 0;
-  width: 92%;
+.informacoes span {
+  margin-right: 3em;
 }
