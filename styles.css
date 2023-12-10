@@ -1,6 +1,7 @@
 @import url("styles/navbar.css");
 @import url("styles/cabecalho.css"); 
 @import url("styles/metricas.css");
+@import url("styles/talentos.css");
 @import url("styles/vagas.css");
 
 :root {
@@ -9,10 +10,12 @@
   --vinho: #8E2424;
   --branco: #FFF;
   --fundo-vagas: rgba(142, 36, 36, 0.05);
+  --fonte: #101828;
 }
 
 body {
   font-family: var(--fonte-principal);
   font-size: 16px;
   font-weight: 500;
+  color: var(--fonte);
 }
