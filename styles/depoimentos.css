@@ -1,0 +1,36 @@
+.secao-depoimentos__card {
+  display: flex;
+  border-radius: 16px;
+  margin: 4em;
+  background: var(--fundo-depoimentos);
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.secao-depoimentos__card__texto {
+  color: var(--vinho);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.secao-depoimentos__card__paragrafo {
+  font-size: 36px;
+  margin-bottom: 1em;
+}
+
+.secao-depoimentos__card__avatar {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 2em;
+}
+
+.secao-depoimentos__card__profissao-colaborador {
+  margin-top: 0.5em;
+  color: var(--fonte-cinza);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
