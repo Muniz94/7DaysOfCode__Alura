@@ -2,6 +2,7 @@
   display: flex;
   border-radius: 16px;
   margin: 4em;
+  padding: 4em;
   background: var(--fundo-depoimentos);
   align-items: center;
   flex-direction: column;
