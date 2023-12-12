@@ -4,6 +4,7 @@
 @import url("styles/talentos.css");
 @import url("styles/vagas.css");
 @import url("styles/depoimentos.css");
+@import url("styles/rodape.css");
 
 :root {
   --fonte-principal: "Inter";
@@ -13,6 +14,7 @@
   --fundo-vagas: rgba(142, 36, 36, 0.05);
   --fonte: #101828;
   --fundo-depoimentos: rgba(195, 25, 25, 0.03);
+  --bordas: #EAECF0;
 }
 
 body {
