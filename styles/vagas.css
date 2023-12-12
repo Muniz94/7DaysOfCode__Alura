@@ -16,7 +16,7 @@
   padding: 24px 24px 28px 24px;
   flex-direction: column;
   gap: 24px;
-  border: 1px solid var(--gray-200, #EAECF0);
+  border: 1px solid var(--bordas);
   margin-bottom: 3em;
 }
 

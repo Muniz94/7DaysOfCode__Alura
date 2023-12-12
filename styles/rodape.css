@@ -1,0 +1,46 @@
+.rodape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rodape__titulo {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.rodape__texto {
+  font-size: 20px;
+  color: var(--fonte-cinza);
+  font-weight: 400;
+}
+
+.rodape__formulario {
+  padding: 2em;
+  display: flex;
+  gap: 1em;
+}
+
+.rodape__formulario__campotxt {
+  font-weight: 400;
+  border-radius: 8px;
+  border: 1px solid var(--bordas);
+  background: var(--branco);
+  padding: 0.8em 2em 0.8em 0.3em;
+  width: 100%;
+}
+
+.rodape__formulario__botao {
+  color: var(--branco);
+  background: var(--vinho);
+  padding: 0.75em 1.25em;
+  border-radius: 8px;
+  border: 1px solid var(--vinho);
+  background: var(--vinho);
+}
+
+.rodape__direitos {
+  color: var(--fonte-cinza);
+  font-weight: 400;
+  margin-bottom: 1em;
+}
