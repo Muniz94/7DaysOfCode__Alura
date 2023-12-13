@@ -1,0 +1,28 @@
+.metricas-container {
+  display: flex;
+  justify-content: center;
+}
+
+.metricas-container__primeira,  .metricas-container__segunda, 
+.metricas-container__terceira, .metricas-container__quarta {
+  margin: 0 2em;
+}
+
+.metricas-container__primeira__titulo, .metricas-container__segunda__titulo, 
+.metricas-container__terceira__titulo, .metricas-container__quarta__titulo {
+  color: var(--vinho);
+  font-size: 60px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.metricas-container__primeira__subtitulo, .metricas-container__segunda__subtitulo,
+.metricas-container__terceira__subtitulo, .metricas-container__quarta__subtitulo {
+  font-size: 18px;
+}
+
+.metricas-container__primeira__paragrafo, .metricas-container__segunda__paragrafo,
+.metricas-container__terceira__paragrafo, .metricas-container__quarta__paragrafo {
+  font-weight: 400;
+  color: var(--fonte-cinza);
+}
