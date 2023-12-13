@@ -1,0 +1,20 @@
+@import url("styles/header.css");
+@import url("styles/consultas.css");
+
+:root {
+  --cor-de-fundo: #EFF0F4;
+  --branco: #FFFFFF;
+  --fonte-principal: 'Montserrat';
+  --fonte-cinza: #A3A3A3;
+  --fonte: #464646;
+  --fundo-botao-laranja: #FFB050;
+  --fundo-botao-azul: #4894FF;
+  --borda-botao: 1px solid #ECECEC;
+}
+
+body {
+  background-color: var(--cor-de-fundo);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--fonte-principal);
+}

@@ -1,0 +1,115 @@
+.consultas__medico {
+  display: grid;
+  grid-template-areas: 
+  "img h1"
+  "img span";
+  padding: 1em;
+  grid-template-columns: 0.3fr 1fr;
+}
+
+.consultas__medico__foto {
+  grid-area: img;
+  width: 57px;
+  height: 57px;
+}
+
+.consultas__medico__boas-vindas {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.consultas__medico__numero {
+  font-size: 14px;
+  color: var(--fonte-cinza);
+}
+
+.consultas__dia {
+  font-weight: 700;
+  padding: 1em;
+}
+
+.consultas__card {
+  border-radius: 8px;
+  background: var(--branco);
+  padding: 1em;
+  margin: 1em;
+}
+
+.consultas__card__grid {
+  display: grid;
+  grid-template-areas: 
+  "img h2 img1"
+  "img span img1";
+  grid-template-columns: 0.3fr 1fr auto;
+  row-gap: 0.7em;
+}
+
+.consultas__card__foto-paciente {
+  grid-area: img;
+}
+
+.consultas__card__nome-paciente {
+  grid-area: h2;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.consultas__card__foto-chat {
+  grid-area: img1;
+}
+
+.consultas__card__tipo-consulta {
+  grid-area: span;
+  color: var(--fonte-cinza);
+  font-size: 12px;
+  display: flex;
+  gap: 1em;
+}
+
+.consultas__card__grid1 {
+  display: grid;
+  grid-template-areas: 
+  "span span"
+  "button button1";
+  grid-template-columns: auto auto;
+  row-gap: 1em;
+  column-gap: 1em;
+}
+
+.consultas__card__horario-consulta { 
+  grid-area: span;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.consultas__card__videoBt {
+  grid-area: button;
+  font-size: 14px;
+  color: var(--branco);
+  font-weight: 500;
+  border-radius: 8px;
+  background: var(--fundo-botao-laranja);
+  box-shadow: 0px 4px 16px 0px rgba(255, 176, 80, 0.16);
+  padding: 0.7em 1em;
+  border: none;
+}
+
+.consultas__card__audioBt {
+  grid-area: button1;
+  font-size: 14px;
+  border: var(--borda-botao);
+  border-radius: 8px;
+  background: var(--branco);
+  font-weight: 500;
+}  
+
+.consultas__card__enderecoBt {
+  background: var(--fundo-botao-azul);
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 4px 16px 0px rgba(72, 148, 255, 0.16);
+  padding: 0.7em 8.7em;
+  color: var(--branco);
+  font-weight: 500;
+  font-size: 14px;
+}
