@@ -1,0 +1,16 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: var(--branco)
+}
+
+.cabecalho__horario {
+  font-size: 14px;
+}
+
+.container {
+  display: flex;
+  gap: 1em;
+}
+
