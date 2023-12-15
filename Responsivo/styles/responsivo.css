@@ -1,0 +1,136 @@
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 465px) and (max-width:768px){
+  .consultas__medico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .consultas__medico__foto {
+    width: 154px;
+    height: 154px;
+  }
+	.consultas__medico__boas-vindas {
+    font-size: 2em;
+  }
+  .consultas__medico__numero {
+    font-size: 1em;
+  }
+  .consultas__dia {
+    font-size: 1.3em;
+  }
+  .consultas__card__foto-paciente {
+    width: 100px;
+    height: 100px;
+  }
+  .consultas__card__nome-paciente {
+    font-size: 1.7em;
+  }
+  .consultas__card__icone {
+    width: 20px;
+    height: 20px;
+  }
+  .consultas__card__tipo-consulta {
+    font-size: 1.1em;
+  }
+  .consultas__card__foto-chat {
+    width: 70px;
+    height: 70px;
+  }
+  .consultas__card__horario-consulta {
+    font-size: 1em;
+  }
+  .consultas__card__enderecoBt {
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .cabecalho {
+    display: none;
+  }
+  .consultas__medico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .consultas__medico__foto {
+    width: 200px;
+    height: 200px;
+  }
+	.consultas__medico__boas-vindas {
+    font-size: 3em;
+  }
+  .consultas__medico__numero {
+    font-size: 2em;
+  }
+  .consultas__dia {
+    font-size: 2.6em;
+  }
+  .consultas__card {
+    display: flex;
+    flex-direction: column;
+  }
+  .consultas__card__foto-paciente {
+    width: 200px;
+    height: 200px;
+    margin-right: 5em;
+  }
+  .consultas__card__nome-paciente {
+    font-size: 2.4em;
+  }
+  .consultas__card__icone {
+    width: 40px;
+    height: 40px;
+  }
+  .consultas__card__tipo-consulta {
+    font-size: 2.2em;
+  }
+  .consultas__card__foto-chat {
+    width: 100px;
+    height: 100px;
+  }
+  .consultas__card__horario-consulta {
+    font-size: 2em;
+  }
+  .consultas__card__enderecoBt {
+    width: 90px;
+    height: 80px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .consultas__card__videoBt,  .consultas__card__audioBt{
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    width: 20em;
+    height: 5em;
+  }
+}
+
+@media (min-width: 1124px) {
+  .consultas__card__videoBt,  .consultas__card__audioBt{
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    width: 32em;
+    height: 5em;
+}
+
+.consultas__card__grid1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+}
