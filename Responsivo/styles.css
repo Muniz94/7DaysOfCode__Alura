@@ -2,6 +2,7 @@
 @import url("styles/consultas.css");
 @import url("styles/rodape.css");
 @import url("styles/responsivo.css");
+@import url("styles/botaoflutuante.css");
 
 :root {
   --cor-de-fundo: linear-gradient(165.96deg, #F8F4FF 0%, #EFF0F4 100%);
@@ -19,4 +20,8 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-family: var(--fonte-principal);
+}
+
+input:hover, .consultas__card__foto-chat:hover, .navbar__lista__item, .botao-flutuante {
+  cursor: pointer;
 }
