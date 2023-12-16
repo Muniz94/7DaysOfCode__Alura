@@ -1,3 +1,7 @@
+.consultas {
+  padding-bottom: 4.5em;
+}
+
 .consultas__medico {
   display: grid;
   grid-template-areas: 
