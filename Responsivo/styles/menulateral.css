@@ -1,0 +1,24 @@
+.menu-lateral {
+  width: 208px;
+  background: var(--branco);
+  gap: 3em;
+  color: var(--fonte-cinza);
+}
+
+.menu-lateral__lista {
+  padding: 1.5em;
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.menu-lateral__lista__item__texto {
+  margin-left: 3em;
+}
+
+.menu-lateral__lista__item {
+  display: flex;
+  align-items: center;
+}
+

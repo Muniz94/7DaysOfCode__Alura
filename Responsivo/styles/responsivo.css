@@ -1,6 +1,12 @@
+@media (max-width: 767px) {
+  .menu-lateral {
+    display: none;
+  }
+}
+
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 1023px) {
-  .cabecalho {
+  .cabecalho, .menu-lateral {
     display: none;
   }
    .consultas__medico__foto {
@@ -63,12 +69,20 @@
 
 /* Telas maiores */
 @media (min-width: 1024px) {
-  .cabecalho {
+  .cabecalho, .navbar {
     display: none;
   }
   .consultas__secao__cards {
     display: grid;
     grid-template-areas: 
     "div div div";
+  }
+
+  body {
+    display: grid;
+    grid-template-areas: 
+    "aside section"
+    "aside nav";
+    grid-template-columns: auto 1fr;
   }
 }
