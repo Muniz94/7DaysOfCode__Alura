@@ -4,6 +4,7 @@
 @import url("styles/responsivo.css");
 @import url("styles/botaoflutuante.css");
 @import url("styles/menulateral.css");
+@import url("styles/formulario.css");
 
 :root {
   --cor-de-fundo: linear-gradient(165.96deg, #F8F4FF 0%, #EFF0F4 100%);
