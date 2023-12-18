@@ -3,6 +3,7 @@
   background: var(--branco);
   gap: 3em;
   color: var(--fonte-cinza);
+  height: 100%;
 }
 
 .menu-lateral__lista {
