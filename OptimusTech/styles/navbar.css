@@ -1,11 +1,16 @@
 .navbar {
-  padding: 0 2em;
+  padding: 1em 2em;
+  color: var(--fonte-cinza);
   display: flex;
   justify-content: space-between;
-  color: var(--fonte-cinza);
 }
 
-.container {
+.menu-hamburguer {
+  display: none;
+  visibility: hidden;
+}
+
+.container, .container1 {
   display: flex;
   align-items: center;
   gap: 2em;

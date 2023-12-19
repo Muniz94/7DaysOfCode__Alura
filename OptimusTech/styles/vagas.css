@@ -13,7 +13,7 @@
 .secao-vagas__card {
   border-radius: 16px;
   display: flex;
-  padding: 24px 24px 28px 24px;
+  padding: 20px 20px 24px 20px;
   flex-direction: column;
   gap: 24px;
   border: 1px solid var(--bordas);
@@ -24,10 +24,9 @@
   font-size: 18px;
 }
 
-.informacoes {
+.secao-vagas__card__informacoes {
   color: var(--fonte-cinza);
+  display: flex;
+  gap: 2em;
 }
 
-.informacoes span {
-  margin-right: 3em;
-}
