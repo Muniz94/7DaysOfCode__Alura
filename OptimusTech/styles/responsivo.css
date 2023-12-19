@@ -1,0 +1,39 @@
+@media screen and (max-width: 678px) {
+  .container1, .opcoes {
+    display: none;
+  }
+  .menu-hamburguer {
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    visibility: visible;
+  }
+  .cabecalho__paragrafo {
+    margin: 0 2em;
+  }
+  .metricas-container__primeira__titulo, .metricas-container__segunda__titulo, .metricas-container__terceira__titulo , .metricas-container__quarta__titulo  {
+    font-size: 32px;
+  }
+  .metricas-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .talentos {
+    margin : 0 2em
+  }
+  .talentos__imagem {
+    max-height: 100%;
+  }
+  .secao-vagas__card__titulo {
+    font-size: 12px;
+  }
+  .secao-vagas__card {
+    font-size: 10px;
+  }
+  .secao-depoimentos__card__paragrafo  {
+    font-size: 20px;
+  }
+  .rodape {
+    text-align: center;
+  }
+}
