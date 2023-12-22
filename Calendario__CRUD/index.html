@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário</title>
+</head>
+<body>
+  <form class="formulario">
+    <fieldset class="formulario__blocoDeCampos">
+      <label for="nome" class="formulario__blocoDeCampos__nome">Nome:
+      <input name="nome" type="text"  minlength="3" maxlength="120" pattern="([aA-zZ]+)" required>
+      </label>
+      <label for="data" class="formulario__blocoDeCampos__data">Data:
+        <input name="data" type="date" required>
+      </label>
+      <button class="formulario__botao" type="submit">Enviar</button>
+    </fieldset>
+  </form>
+</body>
+</html>
