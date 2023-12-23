@@ -8,14 +8,16 @@
 <body>
   <form class="formulario">
     <fieldset class="formulario__blocoDeCampos">
-      <label for="nome" class="formulario__blocoDeCampos__nome">Nome:
-      <input name="nome" type="text"  minlength="3" maxlength="120" pattern="([aA-zZ]+)" required>
+      <label for="nome">Nome:
+      <input id="nome" class="formulario__blocoDeCampos__nome" type="text"  minlength="3" maxlength="120" pattern="([aA-zZ]+)" required>
       </label>
-      <label for="data" class="formulario__blocoDeCampos__data">Data:
-        <input name="data" type="date" required>
+      <label for="data">Data:
+        <input id="data" class="formulario__blocoDeCampos__data" type="date" required>
       </label>
       <button class="formulario__botao" type="submit">Enviar</button>
     </fieldset>
   </form>
+  <ul class="tabela"></ul>
 </body>
+  <script src="script.js"></script>
 </html>
