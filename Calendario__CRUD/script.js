@@ -8,10 +8,34 @@ const pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
 
 function criarTabela(item) {
   const li = document.createElement('li');
-  li.textContent = 'Nome: ' + item.nome + ' ------ Data de Nascimento: ' + item.data_de_nascimento;
+  li.textContent = 'Nome: ' + item.nome + ' ------ Data de Nascimento: ' + item.data_de_nascimento + ' ';
+
+  const botaoEditar = document.createElement('button');
+  botaoEditar.textContent = 'Editar';
+
+  li.append(botaoEditar);
+
+  botaoEditar.onclick = () => {
+    const novoNome = prompt('Novo nome: ');
+    const novaDtNasc = prompt('Nova data de nascimento: ');
+    item.nome = novoNome;
+    item.data_de_nascimento = novaDtNasc;
+    localStorage.setItem('pessoas', JSON.stringify(pessoas));
+
+    campoNome.value = "";
+    campoData.value = "";
+
+    tabela.textContent = '';
+
+    pessoas.forEach(item => {
+      const elemento = criarTabela(item);
+      tabela.append(elemento);
+    });
+  }
 
   return li;
 }
+
 
 formulario.addEventListener('submit', (evento) => {
   evento.preventDefault();
