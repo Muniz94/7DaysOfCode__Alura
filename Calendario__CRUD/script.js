@@ -4,16 +4,21 @@ const campoNome = document.querySelector('.formulario__blocoDeCampos__nome');
 const campoData = document.querySelector('.formulario__blocoDeCampos__data');
 const tabela = document.querySelector('.tabela');
 
-const pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
+let pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
 
 function criarTabela(item) {
+
   const li = document.createElement('li');
   li.textContent = 'Nome: ' + item.nome + ' ------ Data de Nascimento: ' + item.data_de_nascimento + ' ';
 
   const botaoEditar = document.createElement('button');
   botaoEditar.textContent = 'Editar';
 
+  const botaoDeletar = document.createElement('button');
+  botaoDeletar.textContent = 'Deletar';
+
   li.append(botaoEditar);
+  li.append(botaoDeletar);
 
   botaoEditar.onclick = () => {
     const novoNome = prompt('Novo nome: ');
@@ -31,6 +36,12 @@ function criarTabela(item) {
       const elemento = criarTabela(item);
       tabela.append(elemento);
     });
+  }
+
+  botaoDeletar.onclick = () => {
+    li.remove();
+    pessoas = pessoas.filter(sujeito => sujeito != item);
+    localStorage.setItem('pessoas', JSON.stringify(pessoas));
   }
 
   return li;
