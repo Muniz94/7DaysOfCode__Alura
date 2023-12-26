@@ -9,7 +9,7 @@ let pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
 function criarTabela(item) {
 
   const li = document.createElement('li');
-  li.textContent = 'Nome: ' + item.nome + ' ------ Data de Nascimento: ' + item.data_de_nascimento + ' ';
+  li.textContent = 'Nome: ' + item.nome + ' || Data de Nascimento: ' + item.data_de_nascimento + ' || ';
 
   const botaoEditar = document.createElement('button');
   botaoEditar.textContent = 'Editar';
