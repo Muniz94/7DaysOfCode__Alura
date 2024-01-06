@@ -1,0 +1,91 @@
+:root {
+  --fonte-principal: "Kumbh Sans";
+  --fonte-branca: #FFF;
+  --fonte-descricao: #ACACAC;
+  --fonte-input: #8A8A8A;
+  --fundo-card: #1D1C3B;
+  --fundo: #17162E;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--fundo);
+  color: var(--fonte-branca);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.titulo {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.caixa-pesquisa {
+  color: var(--fonte-input);
+  border-radius: 8px;
+  opacity: 0.2;
+  background: var(--fonte-branca);
+  width: 39em;
+  height: 4em;
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.caixa-pesquisa__input {
+  border-style: none;
+  width: 100%;
+  outline: 0;
+}
+
+.campos {
+  display: flex;
+  border: none;
+  gap: 1em;
+  align-items: center;
+}
+
+.campos__check {
+  margin: 2em 0;
+}
+
+.campos__check__texto {
+  font-weight: 600;
+}
+
+.card {
+  display: flex;
+  gap: 4.8em;
+  background: var(--fundo-card);
+  border-radius: 8px;
+  margin: 1em 6.7em;
+  padding: 2.5em 1.8em;
+  align-items: center;
+}
+
+.card__imagem {
+  border-radius: 60px;
+  width: 14em;
+  height: 7em;
+}
+
+.card__div {
+  width: 100%;
+}
+
+.card__titulo {
+  font-size: 18px;
+}
+
+.card__favoritos {
+  display: flex;
+  gap: 2.8em;
+}
+
+.card__favoritos a{
+  display: flex;
+  gap: 0.5em;
+}
