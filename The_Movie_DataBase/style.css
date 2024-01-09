@@ -77,9 +77,9 @@ body {
 
 .filmes__card__imagem {
   grid-area: img;
-  border-radius: 50px;
-  width: 4em;
-  height: 4em;
+  border-radius: 80px;
+  width: 7em;
+  height: 7em;
 }
 
 .filmes__card__div {

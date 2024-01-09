@@ -29,9 +29,6 @@ function adicionarFilme(filme) {
   imagem.alt = `Ícone ${foto_filme}`;
   imagem.setAttribute('src', foto_filme);
 
-  imagem.alt = `Ícone ${filme.title}`;
-  imagem.setAttribute('src', filme.image);
-
   li.append(imagem);
 
   const divInfo = document.createElement('div');
