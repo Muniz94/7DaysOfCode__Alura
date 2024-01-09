@@ -36,6 +36,7 @@ function adicionarFilme(filme) {
 
   const imagem = document.createElement('img');
   imagem.classList.add('filmes__card__imagem');
+  imagem.alt = `Ícone ${filme.title}`;
   imagem.setAttribute('src', filme.image);
 
   li.append(imagem);
@@ -52,6 +53,7 @@ function adicionarFilme(filme) {
   divFavoritos.classList.add('filmes__card__div__favoritos');
   const curtir = document.createElement('img');
   curtir.src = 'imagens/Star.svg'
+  curtir.alt = 'Ícone de estrela'
   divFavoritos.append(curtir);
   const txtCurtir = document.createElement('span');
   txtCurtir.textContent = filme.rating;
@@ -59,6 +61,7 @@ function adicionarFilme(filme) {
   divInfo.append(divFavoritos);
   const curtir1 = document.createElement('img');
   curtir1.src = filme.isFavorited ? 'imagens/Coracao_preenchido.svg' : 'imagens/Coracao.svg';
+  curtir1.alt = filme.isFavorited ? 'Ícone de coração preenchido' : 'Ícone de coração';
   divFavoritos.append(curtir1);
   const txtCurtir1 = document.createElement('span');
   txtCurtir1.textContent = 'Favoritar';
