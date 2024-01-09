@@ -1,34 +1,23 @@
 const listaFilmes = document.querySelector('.filmes');
 
-const filmes = [
-  {
-    image: 'imagens/Vingadores.svg',
-    title: 'Avengers Endgame (2019)',
-    rating: 9.2,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    isFavorited: false
-  },
-  {
-    image: 'imagens/Batman.svg',
-    title: 'Batman (2022)',
-    rating: 9.2,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    isFavorited: false
-  },
-  {
-    image: 'imagens/Doutor Estranho.svg',
-    title: 'Doctor Strange in the Multiverse of Madness',
-    rating: 9.2,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    isFavorited: true
-  },
-]
+import { chave } from "./chave.js";
 
-window.onload = function() {
+async function ListaFilmes() {
+  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${chave}&language=pt-BR`; 
+  const urlConvertida = await fetch (url);
+  const { results } = await urlConvertida.json();
+  return results;
+}
+
+window.onload = async function() {
+  const filmes = await ListaFilmes();
   filmes.forEach(filme => adicionarFilme(filme))
 }
 
 function adicionarFilme(filme) {
+  const { title, poster_path, vote_average, overview } = filme
+
+  const foto_filme = `https://image.tmdb.org/t/p/w500${poster_path}`
 
   const li = document.createElement('li');
   li.classList.add('filmes__card');
@@ -36,6 +25,10 @@ function adicionarFilme(filme) {
 
   const imagem = document.createElement('img');
   imagem.classList.add('filmes__card__imagem');
+
+  imagem.alt = `Ícone ${foto_filme}`;
+  imagem.setAttribute('src', foto_filme);
+
   imagem.alt = `Ícone ${filme.title}`;
   imagem.setAttribute('src', filme.image);
 
@@ -47,7 +40,7 @@ function adicionarFilme(filme) {
 
   const titulo = document.createElement('h2');
   titulo.classList.add('filmes__card__div__titulo');
-  titulo.textContent = `${filme.title}`
+  titulo.textContent = `${title}`
   divInfo.append(titulo)
   const divFavoritos = document.createElement('div');
   divFavoritos.classList.add('filmes__card__div__favoritos');
@@ -56,7 +49,7 @@ function adicionarFilme(filme) {
   curtir.alt = 'Ícone de estrela'
   divFavoritos.append(curtir);
   const txtCurtir = document.createElement('span');
-  txtCurtir.textContent = filme.rating;
+  txtCurtir.textContent = vote_average;
   divFavoritos.append(txtCurtir)
   divInfo.append(divFavoritos);
   const curtir1 = document.createElement('img');
@@ -71,7 +64,7 @@ function adicionarFilme(filme) {
 
   const descricao = document.createElement('p');
   descricao.classList.add('filmes__card__descricao');
-  descricao.textContent = `${filme.description}`;
+  descricao.textContent = `${overview}`;
 
   li.append(descricao);
 }
