@@ -32,13 +32,18 @@ body {
   height: 4em;
   padding: 0 1.5em;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .caixa-pesquisa__input {
   border-style: none;
   width: 100%;
   outline: 0;
+}
+
+.caixa-pesquisa a {
+  height: fit-content;
+  width: fit-content;
 }
 
 .campos {

@@ -1,6 +1,35 @@
 const listaFilmes = document.querySelector('.filmes');
+const botaoPesquisa = document.querySelector('.caixa-pesquisa__botao');
+const caixaPesquisa = document.querySelector('.caixa-pesquisa__input');
 
 import { chave } from "./chave.js";
+
+  async function PesquisarFilme() {
+    const pesquisaFilme = document.querySelector('[data-pesquisa]').value;
+    const busca = await buscaFilme(pesquisaFilme);
+
+    while (listaFilmes.firstChild) {
+      listaFilmes.removeChild(listaFilmes.firstChild);
+    }
+
+    busca.forEach(filme => adicionarFilme(filme))
+  }
+
+  caixaPesquisa.addEventListener('keyup', function(evento) {
+    if (evento.keyCode == 13) { // Tecla Enter
+      PesquisarFilme();
+      return;
+    }
+  })
+
+  botaoPesquisa.addEventListener('click', evento => PesquisarFilme(evento));
+
+async function buscaFilme(termoDaBusca) {
+  const urlBusca = `https://api.themoviedb.org/3/search/movie?api_key=${chave}&query=${termoDaBusca}&language=pt-BR`;
+  const urlBuscaConvertida =  await fetch (urlBusca);
+  const { results } = await urlBuscaConvertida.json();
+  return results;
+}
 
 async function ListaFilmes() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${chave}&language=pt-BR`; 
