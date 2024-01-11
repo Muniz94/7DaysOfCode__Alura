@@ -25,9 +25,8 @@ import { chave } from "./chave.js";
   botaoPesquisa.addEventListener('click', evento => PesquisarFilme(evento));
 
 async function buscaFilme(termoDaBusca) {
-  const urlBusca = `https://api.themoviedb.org/3/search/movie?api_key=${chave}&query=${termoDaBusca}&language=pt-BR`;
-  const urlBuscaConvertida =  await fetch (urlBusca);
-  const { results } = await urlBuscaConvertida.json();
+  const urlBusca = await fetch (`https://api.themoviedb.org/3/search/movie?api_key=${chave}&query=${termoDaBusca}&language=pt-BR`);
+  const { results } = await urlBusca.json();
   return results;
 }
 
@@ -38,15 +37,51 @@ async function ListaFilmes() {
   return results;
 }
 
+function AdicionarStorage(filme) {
+  const filmes = JSON.parse(localStorage.getItem('Filmes')) || []
+  filmes.push(filme)
+  const FilmesJSON = JSON.stringify(filmes)
+  localStorage.setItem('Filmes', FilmesJSON)
+}
+
+function RemoverStorage(id) {
+    const filmes = JSON.parse(localStorage.getItem('Filmes')) || []
+    const FilmeAchado = filmes.find(filme => filme.id == id)
+    const NovaListaFilmes = filmes.filter(filme => filme.id != FilmeAchado.id)
+    localStorage.setItem('Filmes', JSON.stringify(NovaListaFilmes))
+  }
+
+function ChecarFavoritado(id) {
+  const filmes = JSON.parse(localStorage.getItem('Filmes')) || [];
+  return filmes.find(filme => filme.id == id);
+}
+
+function Favoritar(evento, filme) {
+  const Favorito = {
+    Favoritado: 'imagens/Coracao_preenchido.svg',
+    NaoFavoritado: 'imagens/Coracao.svg'
+  }
+
+  if (evento.target.src.includes(Favorito.NaoFavoritado)) { 
+    evento.target.src = Favorito.Favoritado;
+    AdicionarStorage(filme);
+  }  else {
+    evento.target.src = Favorito.NaoFavoritado;
+    RemoverStorage(filme.id)
+  }
+}
+
 window.onload = async function() {
   const filmes = await ListaFilmes();
   filmes.forEach(filme => adicionarFilme(filme))
-}
+  };
 
 function adicionarFilme(filme) {
   const { title, poster_path, vote_average, overview } = filme
 
   const foto_filme = `https://image.tmdb.org/t/p/w500${poster_path}`
+
+  filme.isFavorited = ChecarFavoritado(filme.id);
 
   const li = document.createElement('li');
   li.classList.add('filmes__card');
@@ -63,7 +98,6 @@ function adicionarFilme(filme) {
   const divInfo = document.createElement('div');
   divInfo.classList.add('filmes__card__div');
   
-
   const titulo = document.createElement('h2');
   titulo.classList.add('filmes__card__div__titulo');
   titulo.textContent = `${title}`
@@ -81,7 +115,9 @@ function adicionarFilme(filme) {
   const curtir1 = document.createElement('img');
   curtir1.src = filme.isFavorited ? 'imagens/Coracao_preenchido.svg' : 'imagens/Coracao.svg';
   curtir1.alt = filme.isFavorited ? 'Ícone de coração preenchido' : 'Ícone de coração';
+  curtir1.onclick = evento => (Favoritar(evento, filme));
   divFavoritos.append(curtir1);
+  curtir1.classList.add('filmes__card__div__favoritos__botaoFavorito');
   const txtCurtir1 = document.createElement('span');
   txtCurtir1.textContent = 'Favoritar';
   divFavoritos.append(txtCurtir1)
