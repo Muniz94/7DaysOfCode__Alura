@@ -1,28 +1,46 @@
-const listaFilmes = document.querySelector('.filmes');
+const catalogoFilmes = document.querySelector('.filmes');
 const botaoPesquisa = document.querySelector('.caixa-pesquisa__botao');
 const caixaPesquisa = document.querySelector('.caixa-pesquisa__input');
+const checkBoxFavoritos = document.querySelector('input[type="checkbox"]')
 
 import { chave } from "./chave.js";
 
-  async function PesquisarFilme() {
+  async function pesquisarFilme() {
     const pesquisaFilme = document.querySelector('[data-pesquisa]').value;
     const busca = await buscaFilme(pesquisaFilme);
 
-    while (listaFilmes.firstChild) {
-      listaFilmes.removeChild(listaFilmes.firstChild);
-    }
+    limpaFilmes();
 
     busca.forEach(filme => adicionarFilme(filme))
   }
 
+  function limpaFilmes() {
+    while (catalogoFilmes.firstChild) {
+      catalogoFilmes.removeChild(catalogoFilmes.firstChild);
+    }
+  }
+
+  function checarSelecaoCheckBox() {
+    const Checado = checkBoxFavoritos.checked
+    if (Checado) {
+      limpaFilmes();
+      const filmes = filmesFavoritos() || [];
+      filmes.forEach(filme => adicionarFilme(filme));
+    } else {
+      limpaFilmes();
+      filmesPopulares();
+    }
+  }
+
   caixaPesquisa.addEventListener('keyup', function(evento) {
     if (evento.keyCode == 13) { // Tecla Enter
-      PesquisarFilme();
+      pesquisarFilme();
       return;
     }
   })
 
-  botaoPesquisa.addEventListener('click', evento => PesquisarFilme(evento));
+  botaoPesquisa.addEventListener('click', evento => pesquisarFilme(evento));
+  checkBoxFavoritos.addEventListener('change', checarSelecaoCheckBox);
 
 async function buscaFilme(termoDaBusca) {
   const urlBusca = await fetch (`https://api.themoviedb.org/3/search/movie?api_key=${chave}&query=${termoDaBusca}&language=pt-BR`);
@@ -30,33 +48,37 @@ async function buscaFilme(termoDaBusca) {
   return results;
 }
 
-async function ListaFilmes() {
+async function listaFilmes() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${chave}&language=pt-BR`; 
   const urlConvertida = await fetch (url);
   const { results } = await urlConvertida.json();
   return results;
 }
 
-function AdicionarStorage(filme) {
+function adicionarStorage(filme) {
   const filmes = JSON.parse(localStorage.getItem('Filmes')) || []
   filmes.push(filme)
   const FilmesJSON = JSON.stringify(filmes)
   localStorage.setItem('Filmes', FilmesJSON)
 }
 
-function RemoverStorage(id) {
+function removerStorage(id) {
     const filmes = JSON.parse(localStorage.getItem('Filmes')) || []
     const FilmeAchado = filmes.find(filme => filme.id == id)
     const NovaListaFilmes = filmes.filter(filme => filme.id != FilmeAchado.id)
     localStorage.setItem('Filmes', JSON.stringify(NovaListaFilmes))
   }
 
-function ChecarFavoritado(id) {
-  const filmes = JSON.parse(localStorage.getItem('Filmes')) || [];
+function filmesFavoritos() {
+  return JSON.parse(localStorage.getItem('Filmes')) || [];
+}
+
+function checarFavoritado(id) {
+  const filmes = filmesFavoritos();
   return filmes.find(filme => filme.id == id);
 }
 
-function Favoritar(evento, filme) {
+function favoritar(evento, filme) {
   const Favorito = {
     Favoritado: 'imagens/Coracao_preenchido.svg',
     NaoFavoritado: 'imagens/Coracao.svg'
@@ -64,16 +86,20 @@ function Favoritar(evento, filme) {
 
   if (evento.target.src.includes(Favorito.NaoFavoritado)) { 
     evento.target.src = Favorito.Favoritado;
-    AdicionarStorage(filme);
+    adicionarStorage(filme);
   }  else {
     evento.target.src = Favorito.NaoFavoritado;
-    RemoverStorage(filme.id)
+    removerStorage(filme.id)
   }
 }
 
-window.onload = async function() {
-  const filmes = await ListaFilmes();
+async function filmesPopulares() {
+  const filmes = await listaFilmes();
   filmes.forEach(filme => adicionarFilme(filme))
+}
+
+window.onload = function() {
+    filmesPopulares();
   };
 
 function adicionarFilme(filme) {
@@ -81,11 +107,11 @@ function adicionarFilme(filme) {
 
   const foto_filme = `https://image.tmdb.org/t/p/w500${poster_path}`
 
-  filme.isFavorited = ChecarFavoritado(filme.id);
+  filme.isFavorited = checarFavoritado(filme.id);
 
   const li = document.createElement('li');
   li.classList.add('filmes__card');
-  listaFilmes.append(li);
+  catalogoFilmes.append(li);
 
   const imagem = document.createElement('img');
   imagem.classList.add('filmes__card__imagem');
@@ -115,7 +141,7 @@ function adicionarFilme(filme) {
   const curtir1 = document.createElement('img');
   curtir1.src = filme.isFavorited ? 'imagens/Coracao_preenchido.svg' : 'imagens/Coracao.svg';
   curtir1.alt = filme.isFavorited ? 'Ícone de coração preenchido' : 'Ícone de coração';
-  curtir1.onclick = evento => (Favoritar(evento, filme));
+  curtir1.onclick = evento => (favoritar(evento, filme));
   divFavoritos.append(curtir1);
   curtir1.classList.add('filmes__card__div__favoritos__botaoFavorito');
   const txtCurtir1 = document.createElement('span');
