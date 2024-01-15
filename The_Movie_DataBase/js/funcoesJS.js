@@ -1,17 +1,14 @@
 import { funcoesStorage } from "./funcoesStorage.js";
 import { renderizaFilme } from "./mostrarFilmes.js";
 
-const catalogoFilmes = document.querySelector('.filmes');
-const checkBoxFavoritos = document.querySelector('input[type="checkbox"]');
-
 function limpaFilmes() {
-  while (catalogoFilmes.firstChild) {
-    catalogoFilmes.removeChild(catalogoFilmes.firstChild);
+  while (renderizaFilme.catalogoFilmes.firstChild) {
+    renderizaFilme.catalogoFilmes.removeChild(renderizaFilme.catalogoFilmes.firstChild);
   }
 }
 
 function checarSelecaoCheckBox() {
-  const Checado = checkBoxFavoritos.checked
+  const Checado = renderizaFilme.checkBoxFavoritos.checked
   if (Checado) {
     limpaFilmes();
     const filmes = funcoesStorage.filmesFavoritos() || [];

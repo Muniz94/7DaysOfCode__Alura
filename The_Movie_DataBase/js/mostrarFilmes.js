@@ -1,18 +1,18 @@
 import { funcoesJS } from "./funcoesJS.js";
 import { conectaAPI } from './conectaAPI.js';
-import { pesquisaFilme } from './pesquisaFilme.js';
+import { pesquisarFilme } from './pesquisaFilme.js';
 
 const catalogoFilmes = document.querySelector('.filmes');
 const botaoPesquisa = document.querySelector('.caixa-pesquisa__botao');
 const caixaPesquisa = document.querySelector('.caixa-pesquisa__input');
 const checkBoxFavoritos = document.querySelector('input[type="checkbox"]');
 
-botaoPesquisa.addEventListener('click', evento => pesquisaFilme.pesquisarFilme(evento));
+botaoPesquisa.addEventListener('click', evento => pesquisarFilme(evento));
 checkBoxFavoritos.addEventListener('change', funcoesJS.checarSelecaoCheckBox);
 
 caixaPesquisa.addEventListener('keyup', function(evento) {
   if (evento.keyCode == 13) { // Tecla Enter
-    pesquisaFilme.pesquisarFilme();
+    pesquisarFilme();
     return;
   }
 })
@@ -83,5 +83,7 @@ function adicionarFilme(filme) {
 
 export const renderizaFilme = {
   adicionarFilme,
-  filmesPopulares
+  filmesPopulares,
+  checkBoxFavoritos,
+  catalogoFilmes
 }
